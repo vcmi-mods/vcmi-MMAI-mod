@@ -11,7 +11,7 @@ set -euxo pipefail
 MOD_VERSION="$1"
 
 VCMI_COMPAT=$(jq -r '.compatibility.min' mmai/mod.json)
-RELEASE_TAG="vcmi-${VCMI_COMPAT}-mmai-${MOD_VERSION}"
+RELEASE_TAG="vcmi-${VCMI_COMPAT}-${MOD_VERSION}"
 REPO="${GITHUB_REPOSITORY}"
 
 cat <<-EOF
@@ -86,10 +86,16 @@ gh release create "${RELEASE_TAG}" \
     --title "${RELEASE_TAG}" \
     --notes "${notes}"
 
+files=(mmai/mod.json)
+
 zip -qr vcmi-mod.zip mmai
-gh release upload "${RELEASE_TAG}" vcmi-mod.zip -R "${REPO}"
+
+files+=(vcmi-mod.zip)
+
 
 for f in screenshots/*.png; do
     [ -f "$f" ] || continue  # handle literal '*' if expansion failed
-    gh release upload "${RELEASE_TAG}" "$f" -R "${REPO}"
+    files+=("$f")
 done
+
+gh release upload "${RELEASE_TAG}" "${files[@]}" --repo "${REPO}"

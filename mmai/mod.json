@@ -1,23 +1,20 @@
 {
-  "name": "MMAI",
-  "description": "A new type of combat AI powered by machine learning.\n",
-  "version": "1.0",
-  "modType": "AI",
-  "author": "smanolloff",
-  "contact": "https://github.com/smanolloff/vcmi-MMAI-mod",
-  "downloadSize": 15,
-  "filesystem": {
-    "MMAI/MODELS/": [
-      {"type" : "dir",  "path" : "/models"}
-    ],
-    "MMAI/CONFIG/": [
-      {"type" : "dir",  "path" : "/config"}
-    ]
-  },
-  "changelog" : {
-    "1.0" : ["Initial release"]
-  },
-  "compatibility": {
-    "min" : "1.6.0"
-  }
+    "name": "MMAI",
+    "description": "A new type of combat AI powered by machine learning.\n",
+    "author": "Simeon Manolov <s.manolloff@gmail.com>",
+    "contact": "https://github.com/vcmi-mods/mmai/issues",
+    "version": "1.0",
+    "modType": "AI",
+    "changelog": {
+        "1.0": ["Initial release"]
+    },
+    "compatibility": {
+        "min": "1.6.0"
+    },
+    "licenseName": "Apache License, Version 2.0",
+    "licenseURL": "http://www.apache.org/licenses/LICENSE-2.0",
+    "filesystem": {
+        "MMAI/CONFIG/": [{"path": "/config","type": "dir"}],
+        "MMAI/MODELS/": [{"path": "/models","type": "dir"}]
+    }
 }
