@@ -9,7 +9,7 @@
         "1.0": ["Initial release"]
     },
     "compatibility": {
-        "min": "1.6.0"
+        "min": "1.7.0"
     },
     "licenseName": "Apache License, Version 2.0",
     "licenseURL": "http://www.apache.org/licenses/LICENSE-2.0",
