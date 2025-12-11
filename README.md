@@ -9,10 +9,10 @@ Pre-trained models for VCMI's combat AI powered by machine learning.
 [This](https://github.com/vcmi-mods/mmai/actions/workflows/create-release.yml)
 GHA workflow should be used for mod releases. It will:
 
-1. Parse [models/sources.json](mmai/models/sources.json), download the
+1. Parse `models/sources.json`, download the
   models (provided by
   [vcmi-gym](https://github.com/smanolloff/vcmi-gym)) and update
-  [config/settings.json](mmai/config/settings.json)
+  `config/settings.json`
   
 1. Create a release tagged `vcmi-VCMIVER-latest`, where `VCMIVER` is the
   compatibility version extracted from mod.json.
