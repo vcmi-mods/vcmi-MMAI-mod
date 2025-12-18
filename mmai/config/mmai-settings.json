@@ -5,10 +5,12 @@
     "  1.0 = baseline",
     "  2.0 = uncertain",
     "  2.5 = dumb",
-    "  3+ = garbage (too random)"
+    "  3+ = garbage (too random)",
+    "NOTE: The `temperature` feature is still a work-in-progress and is",
+    "      not yet configurable (changing the value here has no effect)."
   ],
   "models": {},
   "fallback": "BattleAI",
-  "temperature": 0.5,
+  "temperature": 0,
   "seed": 0
 }

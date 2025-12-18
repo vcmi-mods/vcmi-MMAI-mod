@@ -3,10 +3,11 @@
     "description": "MMAI is a combat AI powered by machine learning.\n",
     "author": "Simeon Manolov <s.manolloff@gmail.com>",
     "contact": "https://github.com/vcmi-mods/mmai/issues",
-    "version": "1.0",
+    "version": "1.1",
     "modType": "AI",
     "changelog": {
-        "1.0": ["Initial release"]
+        "1.0": ["Initial release"],
+        "1.1": ["Add comment regarding temperature in mmai-settings.json"]
     },
     "compatibility": {
         "min": "1.7.0"
