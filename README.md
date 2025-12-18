@@ -24,7 +24,7 @@ URL.
 
 ### Examples
 
-#### 1. Mod release for a new VCMI major/minor version
+#### Example 1: Mod release for a new VCMI major/minor version
 
 A new VCMI version `1.8.0` is released and mod compatibility must be updated accordingly:
 1. Create new branch `vcmi-1.8`
@@ -33,7 +33,7 @@ A new VCMI version `1.8.0` is released and mod compatibility must be updated acc
 
 Release `vcmi-1.8-latest` will appear shortly.
 
-#### 2. Mod release for a new VCMI patch version
+#### Example 2: Mod release for a new VCMI patch version
 
 A new VCMI version `1.8.1` is released and mod compatibility must be updated accordingly:
 1. Update `mmai/mod.json` with min compatibility version = `1.8.1`
@@ -41,3 +41,12 @@ A new VCMI version `1.8.1` is released and mod compatibility must be updated acc
 
 Release `vcmi-1.8-latest` will appear shortly. The previous release with the same name is renamed to `vcmi-1.8-TIMESTAMP`
 where TIESTAMP is the current time in `YYYYMMDD` format
+
+#### Example 3: Mod release with bugfixes or new features
+
+1. Make necessary changes/fixes
+1. Update `version` and `changelog` in `mmai/mod.json` 
+1. Run the [workflow](https://github.com/vcmi-mods/mmai/actions/workflows/create-release.yml) for branch = `vcmi-x.y` where `x` and `y` are VCMI major/minor versions, e.g. `vcmi-1.8`.
+
+Release `vcmi-x.y-latest` will appear shortly. The previous release with the same name is renamed to `vcmi-1.8-TIMESTAMP`
+where TIESTAMP is the current time in `YYYYMMDD` format.
