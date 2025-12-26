@@ -70,6 +70,15 @@ while read -r name url; do
   settings=$(echo "$settings" | jq --arg k "$name" --arg v "$filename" '.models[$k] = $v')
 done < <(jq -r 'to_entries[] | "\(.key) \(.value)"' mmai/models/sources.json)
 
+# These will be downloaded, but not inserted into settings
+# Also, this file contains a JSON list of urls (as opposed to name-url mapping)
+# This is needed for the migration to dynamic models and can be removed later.
+while read -r url; do
+  dst="mmai/models/${url##*/}"
+  [ -e "$dst" ] && exit 1 || :
+  curl --fail -Lo "$dst" "$url"
+done < <(jq -r '.[]' mmai/models/hidden.json)
+
 echo "$settings" > 'mmai/config/mmai-settings.json'
 
 ##############################################################################
