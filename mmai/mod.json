@@ -1,6 +1,6 @@
 {
     "name": "MMAI",
-    "description": "MMAI is a combat AI powered by machine learning. Learn more about it here: https://smanolloff.github.io/projects/vcmi-gym",
+    "description": "<p>MMAI is a combat AI powered by machine learning.</p><p>You can read more about it <a href='https://smanolloff.github.io/projects/vcmi-gym'>here</a></p>.",
     "author": "Simeon Manolov <s.manolloff@gmail.com>",
     "contact": "https://smanolloff.github.io/projects/vcmi-gym",
     "version": "1.2",
