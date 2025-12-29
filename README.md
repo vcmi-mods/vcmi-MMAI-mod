@@ -2,6 +2,8 @@
 
 Pre-trained models for VCMI's combat AI powered by machine learning.
 
+_You can read more about the MMAI project [here](https://smanolloff.github.io/projects/vcmi-gym)._
+
 <img src="screenshots/screenshot-01.png" alt="components" height="300px">
 
 ## Mod release workflow
