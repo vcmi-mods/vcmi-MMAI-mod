@@ -64,15 +64,27 @@ fi
 
 settings=$(jq '.models = {}' mmai/config/mmai-settings.json)
 
+#
+# Models in sources.json will be downloaded and inserted into mmai-settings.json
+# Example:
+#
+#   # models/sources.json:
+#   {"attacker": "http://example.com/foo.onnx", "defender": "http://example.com/bar.onnx"}
+#
+#   # => Files downloaded as models/foo.onnx and models/bar.onnx
+#   # => config/mmai-settings.json updated with:
+#   {..., "models": {"attacker": "foo.onnx", "defender": "bar.onnx"}, ...
+#
 while read -r name url; do
   filename="${url##*/}"
   curl --fail -Lo "mmai/models/${filename}" "${url}"
   settings=$(echo "$settings" | jq --arg k "$name" --arg v "$filename" '.models[$k] = $v')
 done < <(jq -r 'to_entries[] | "\(.key) \(.value)"' mmai/models/sources.json)
 
-# These will be downloaded, but not inserted into settings
-# Also, this file contains a JSON list of urls (as opposed to name-url mapping)
-# This is needed for the migration to dynamic models and can be removed later.
+#
+# Models in hidden.json will be downloaded only (no changes in mmai-settings.json)
+# NOTE: hidden.json is a *list* of urls (as opposed to sources.json which contains key-value pairs)
+# These models are optional (list may be empty) and only used for smooth migration after hotfixing
 while read -r url; do
   dst="mmai/models/${url##*/}"
   [ -e "$dst" ] && exit 1 || :

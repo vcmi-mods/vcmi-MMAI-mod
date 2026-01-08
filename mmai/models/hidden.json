@@ -1,6 +1,1 @@
-[
-  "https://github.com/smanolloff/vcmi-gym/releases/download/v1.1/attacker-nkjrmrsq-202509291846-dynamic.onnx",
-  "https://github.com/smanolloff/vcmi-gym/releases/download/v1.1/defender-tukbajrv-202509241418-dynamic.onnx",
-  "https://github.com/smanolloff/vcmi-gym/releases/download/v1.2/attacker-nkjrmrsq-202509291846-stochastic.onnx",
-  "https://github.com/smanolloff/vcmi-gym/releases/download/v1.2/defender-tukbajrv-202509241418-stochastic.onnx"
-]
+[]
