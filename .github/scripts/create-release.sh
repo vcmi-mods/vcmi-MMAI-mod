@@ -121,6 +121,9 @@ gh release create "${RELEASE_TAG}" \
 
 files=(mmai/mod.json)
 
+# Remove unneeded files
+rm mmai/models/{sources,hidden}.json
+
 zip -qr mod.zip mmai
 
 files+=(mod.zip)
@@ -130,8 +133,5 @@ for f in screenshots/*.png; do
     [ -f "$f" ] || continue  # handle literal '*' if expansion failed
     files+=("$f")
 done
-
-# Remove unneeded files
-rm mmai/models/sources.json
 
 gh release upload "${RELEASE_TAG}" "${files[@]}" --repo "${REPO}"
